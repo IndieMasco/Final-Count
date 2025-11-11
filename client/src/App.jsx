@@ -126,70 +126,60 @@ export default function App() {
   const isStartDisabled = remainingTime <= 0 && !isTicking && !hasStarted;
 
   return (
-    <div className="main-content">
-      <div className="cd-container">
-        <div className="cd-input">
-          <div>
-            <label htmlFor="hours-input">Hours: </label>
-            <input
-              type="number"
-              value={inputHours}
-              min="0"
-              max="99"
-              onChange={(Hour) => handleTimeInputChange(Hour, "hours")}
-              disabled={isTicking}
-            />
-          </div>
-          <div>
-            <label htmlFor="minutes-input">Minutes: </label>
-            <input
-              type="number"
-              value={inputMinutes}
-              min="0"
-              max="59"
-              onChange={(Min) => handleTimeInputChange(Min, "minutes")}
-              disabled={isTicking}
-            />
-          </div>
-          <div>
-            <label htmlFor="seconds-input">Seconds: </label>
-            <input
-              type="number"
-              value={inputSeconds}
-              min="0"
-              max="59"
-              onChange={(Sec) => handleTimeInputChange(Sec, "seconds")}
-              disabled={isTicking}
-            />
-          </div>
-          <button onClick={handleSetNewTime} disabled={isTicking}>
-            Set Time
-          </button>
-        </div>
-
-        <div className="cd-count">
-          <p>{displayTime}</p>
-        </div>
-
-        <div className="cd-b-container">
-          <button
-            className="cd-button"
-            onClick={handleStartStop}
-            disabled={isStartDisabled}
-          >
-            {startStopText}
-          </button>{" "}
-          <button
-            className="cd-button"
-            onClick={() => handleReset(configTime)}
-            disabled={!hasStarted && remainingTime === configTime}
-          >
-            Reset
-          </button>
-        </div>
-
-        {/* <p>{timerStatus}</p> */}
+    <div className="container">
+      <div className="input">
+        <label htmlFor="hours-input">Hours: </label>
+        <input
+          type="number"
+          value={inputHours}
+          min="0"
+          max="99"
+          onChange={(Hour) => handleTimeInputChange(Hour, "hours")}
+          disabled={isTicking}
+        />
+        <label htmlFor="minutes-input">Minutes: </label>
+        <input
+          type="number"
+          value={inputMinutes}
+          min="0"
+          max="59"
+          onChange={(Min) => handleTimeInputChange(Min, "minutes")}
+          disabled={isTicking}
+        />
+        <label htmlFor="seconds-input">Seconds: </label>
+        <input
+          type="number"
+          value={inputSeconds}
+          min="0"
+          max="59"
+          onChange={(Sec) => handleTimeInputChange(Sec, "seconds")}
+          disabled={isTicking}
+        />
+        <button onClick={handleSetNewTime} disabled={isTicking}>
+          Set Time
+        </button>
       </div>
+
+      <p className="count">{displayTime}</p>
+
+      <div className="b-container">
+        <button
+          onClick={handleStartStop}
+          disabled={isStartDisabled}
+          className="test"
+        >
+          {startStopText}
+        </button>{" "}
+        <button
+          onClick={() => handleReset(configTime)}
+          disabled={!hasStarted && remainingTime === configTime}
+          className="test"
+        >
+          Reset
+        </button>
+      </div>
+
+      {/* <p>{timerStatus}</p> */}
     </div>
   );
 }

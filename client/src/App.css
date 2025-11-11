@@ -7,46 +7,40 @@ body {
   padding: 0;
 }
 
-.cd-container {
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-.cd-input {
-  display: flex;
-  justify-content: center;
-  font-size: 1.2rem;
+.input {
   max-width: 50%;
   margin: auto;
   margin-top: 10px;
   gap: 10px;
   justify-content: space-around;
+  font-size: 1.5rem;
 }
 
-.cd-count {
-  display: flex;
-  justify-content: center;
+.count {
   font-size: 7rem;
   background-color: white;
   border: 5px solid black;
-  border-radius: 40px;
-  width: 40%;
+  border-radius: 80px;
+  width: 35%;
+  padding: 10px;
   margin: auto;
   margin-top: 30px;
 }
 
-.cd-b-container {
-  display: flex;
+.b-container {
   margin: auto;
   margin-top: 10px;
   flex-direction: row;
   gap: 10px;
+  padding: 10px;
 }
 
-.cd-button {
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: white;
-  padding: 10px;
-  font-size: 1.5rem;
+.test {
+  font-size: 2rem;
 }
